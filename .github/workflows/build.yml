@@ -34,7 +34,7 @@ jobs:
             src/app.py
 
       - name: Upload .app
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: LiveWallpaper
           path: dist/LiveWallpaper.app
