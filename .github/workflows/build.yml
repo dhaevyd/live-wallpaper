@@ -1,4 +1,4 @@
-name: Build Mac App
+name: Build Mac App Intel
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-mac:
-    runs-on: macos-latest
+    runs-on: macos-13
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     
@@ -32,6 +32,7 @@ jobs:
           pyinstaller \
             --windowed \
             --name "LiveWallpaper" \
+            --target-arch x86_64 \
             src/app.py
 
       - name: Verify .app exists
